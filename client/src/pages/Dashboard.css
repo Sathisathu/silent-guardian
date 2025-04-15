@@ -1,0 +1,169 @@
+/* Make body background different to show the card */
+body {
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Compact container */
+.dashboard-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* Sections */
+.section {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+/* Input field (full width) */
+.input-field {
+  padding: 8px 10px;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #e53935;
+}
+
+
+/* Input field (inline) */
+.input-small {
+  flex: 1;
+  min-width: 120px;
+  padding: 7px 9px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Contact form layout */
+.contact-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+/* Button styles */
+.alert-button,
+.add-button {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.alert-button {
+  background-color: #e53935;
+  color: white;
+}
+
+.alert-button:hover {
+  background-color: #c62828;
+}
+
+.add-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #1976d2;
+}
+
+.delete-button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+.edit-button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  margin-left: 5px;
+  padding: 4px 8px;
+  background-color: #888;
+  color: white;
+  border: none;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Contact list style */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  background: #fafafa;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #333;
+}
