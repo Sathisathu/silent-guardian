@@ -3,7 +3,6 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { useEffect, useState } from "react";
-import "./App.css"
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -11,12 +10,11 @@ function App() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showInstallButton, setShowInstallButton] = useState(false);
 
-  // Listen for install prompt
   useEffect(() => {
     const handleBeforeInstallPrompt = (e) => {
-      e.preventDefault(); // Prevent the automatic prompt
-      setDeferredPrompt(e); // Save the event
-      setShowInstallButton(true); // Show custom install button
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setShowInstallButton(true);
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
@@ -28,7 +26,7 @@ function App() {
 
   const handleInstallClick = () => {
     if (deferredPrompt) {
-      deferredPrompt.prompt(); // Show native install prompt
+      deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === "accepted") {
           console.log("✅ App installed");
@@ -41,7 +39,6 @@ function App() {
     }
   };
 
-  // Sync token on login/logout from other tabs
   useEffect(() => {
     const watchStorage = () => {
       setToken(localStorage.getItem("token"));
