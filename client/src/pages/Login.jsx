@@ -9,6 +9,8 @@ export default function Login({ onLogin }) {
     password: "",
   });
 
+  const API_BASE = import.meta.env.VITE_API_BASE;
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,7 +21,7 @@ export default function Login({ onLogin }) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${API_BASE}/api/auth/login`,
         formData
       );
 

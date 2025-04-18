@@ -10,11 +10,12 @@ function Dashboard() {
   const [alertMessage, setAlertMessage] = useState("");
   const [editId, setEditId] = useState(null);
 
+  const API_BASE = import.meta.env.VITE_API_BASE;
   const token = localStorage.getItem("token");
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/contacts", {
+      const res = await axios.get(`${API_BASE}/api/contacts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setContacts(res.data);
@@ -26,7 +27,7 @@ function Dashboard() {
   const addContact = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/contacts",
+        `${API_BASE}/api/contacts`,
         { name, phone, email },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -40,7 +41,7 @@ function Dashboard() {
   const updateContact = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/contacts/${editId}`,
+        `${API_BASE}/api/contacts/${editId}`,
         { name, phone, email },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -56,7 +57,7 @@ function Dashboard() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/contacts/${id}`, {
+      await axios.delete(`${API_BASE}/api/contacts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchContacts();
@@ -90,7 +91,7 @@ function Dashboard() {
 
       try {
         await axios.post(
-          "http://localhost:5000/api/alerts/trigger",
+          `${API_BASE}/api/alerts/trigger`,
           {
             message: alertMessage,
             location: { lat: latitude, lng: longitude },
